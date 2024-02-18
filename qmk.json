@@ -1,4 +1,7 @@
 {
     "userspace_version": "1.0",
-    "build_targets": []
+    "build_targets": [
+        ["tweetydabird/lbs6", "vial"],
+        ["crkbd/rev1", "vial"]
+    ]
 }
