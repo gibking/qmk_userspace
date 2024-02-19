@@ -5,36 +5,15 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        KC_MPLY,
-		TO(1),		KC_MSEL,	RGB_TOG,
-		KC_MPRV,	KC_MSTP,	KC_MNXT
-    ),
-	
-	[1] = LAYOUT(
-        KC_TRNS, 	
-		TO(0),		RGB_HUI, 	RGB_SAI,
-		RGB_MOD,	RGB_HUD, 	RGB_SAD
-    ),
-	
-	[2] = LAYOUT(
-        KC_TRNS, 	
-		KC_TRNS,	KC_TRNS, 	KC_TRNS,
-		KC_TRNS,	KC_TRNS, 	KC_TRNS
-    ),
-
-    [3] = LAYOUT(
-        KC_TRNS, 	
-		KC_TRNS,	KC_TRNS, 	KC_TRNS,
-		KC_TRNS,	KC_TRNS, 	KC_TRNS
+        KC_NO, 	
+		KC_NO,	KC_NO, 	KC_NO,
+		KC_NO,	KC_NO, 	KC_NO
     )
 };
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
-    [1] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
-    [2] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
-    [3] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  }
 };
 #endif
 
@@ -51,19 +30,19 @@ enum lighting_keycode {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 	case L_WHITE:
-            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_WHITE); return true; }
+            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_WHITE & rgblight_get_val()); return true; }
         case L_RED:
-            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_RED); return true; }
+            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_RED & rgblight_get_val()); return true; }
         case L_YELLOW:
-            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_YELLOW); return true; }
+            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_YELLOW & rgblight_get_val()); return true; }
         case L_GREEN:
-            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_GREEN); return true; }
+            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_GREEN & rgblight_get_val()); return true; }
         case L_CYAN:
-            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_CYAN); return true; }
+            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_CYAN & rgblight_get_val()); return true; }
         case L_BLUE:
-            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_BLUE); return true; }
+            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_BLUE & rgblight_get_val()); return true; }
         case L_MAGENTA:
-            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_MAGENTA); return true; }
+            if (record->event.pressed) { rgblight_sethsv_noeeprom(HSV_MAGENTA & rgblight_get_val()); return true; }
 	default:
     	    return true;
 
