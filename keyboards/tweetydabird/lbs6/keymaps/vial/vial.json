@@ -45,13 +45,25 @@
 		  "title": "RGB red",
 		  "shortName": "L_RED"
 		},
+		{ "name": "Yellow",
+		  "title": "RGB yellow",
+		  "shortName": "L_YELLOW"
+		},
 		{ "name": "Green",
 		  "title": "RGB green",
 		  "shortName": "L_GREEN"
 		},
+		{ "name": "Cyan",
+		  "title": "RGB cyan",
+		  "shortName": "L_CYAN"
+		},
 		{ "name": "Blue",
 		  "title": "RGB blue",
 		  "shortName": "L_BLUE"
+		},
+		{ "name": "Magenta",
+		  "title": "RGB magenta",
+		  "shortName": "L_MAGENTA"
 		}
 	]
 }
